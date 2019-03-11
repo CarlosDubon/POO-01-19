@@ -218,7 +218,7 @@ header#front-img{
 /* Clases transitorias */
 .menu-content-down{
     border-radius: 100%;
-    background: var(--tip-color);
+    background: #8e44ad;
 }
 .menu-content-open{
     width:auto;
@@ -231,7 +231,7 @@ header#front-img{
 .menu-side div:first-child{
     display: none;
     height: 10px;
-    background: var(--nav-color-1);
+    background: #8e44ad;
     clip-path: polygon(0 100%, 100% 100%, 100% 90%, 10% 90%, 8% 0, 6% 90%, 0 90%);
 }
 .menu-side ul li{
@@ -259,15 +259,15 @@ header#front-img{
 }
 
 .menu-side ul li:first-child, .menu-side li:nth-child(4), .menu-side li:nth-child(7){
-    background: var(--nav-color-1);
+    background: #8e44ad
 }
 
 .menu-side ul li:nth-child(2), .menu-side li:nth-child(5), .menu-side li:nth-child(8){
-    background: var(--nav-color-2);
+    background: #6c5ce7;
 }
 
 .menu-side ul li:nth-child(3), .menu-side li:nth-child(6), .menu-side li:nth-child(9){
-    background: var(--nav-color-3);
+    background: #9b59b6;
 }
 
 /* Estilos particulares de maquetacion */
@@ -322,7 +322,7 @@ footer{
     justify-content: center;
     
     padding: 0.5em 10em;
-    background:var(--sec-color);
+    background:#8e44ad;
     color: #dcdde1;
 }
 
@@ -342,7 +342,6 @@ footer #author{
 
     background: rgba(255, 255, 255, 0.6);
     color: var(--sec-color);
-    border: 0.15em solid var(--sec-color);
     border-radius: 100%;
     
     cursor: pointer;
@@ -351,10 +350,9 @@ footer #author{
 }
 
 #HomeBtn:hover{
-    background: var(--sec-color);
+    background: #9b59b6;
     text-decoration: none;
     color: white;
-    border: 0.15em solid var(--sec-color);
 }
 
 /* Box controlers */
