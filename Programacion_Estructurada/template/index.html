@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>Programación Estructurada</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#introduction">Introdución</a><i class="fas fa-ellipsis-v"></i></li>
+                        <li><a href="#down-netbeans">Sentencias condicionales</a><i class="fas fa-download"></i></li>
+                        <li><a href="#down-jdk">Sentencias iterativas</a><i class="fas fa-download"></i></li>
+                        <li><a href="#down-jdk">Estructuras de datos básicas</a><i class="fas fa-download"></i></li>
+                        <li><a href="#inst-jdk">Ejecicios</a><i class="fas fa-file-import"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Programación Estructurada.</h1>
+                <h3>Lunes, 18 de Marzo de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Introdución
+                            </li>
+                            <li>
+                                Sentencias condicionales
+                            </li>
+                            <li>
+                                Sentencias iterativas
+                            </li>
+                            <li>
+                                Estructuras de datos básicas
+                            </li>
+                            <li>
+                                Funciones
+                            </li>
+                            <li>
+                                Ejecicios
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Programación Estructurada</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id="introduction">
+            <!-- Sections Titles -->
+            <h2>
+                Introdución.
+            </h2>
+            <!-- Single paragraphs -->
+            <p>
+                El siguiente documento tiene como objetivo principal retroalimentar las sentencias y estructuras básicas, es importante saber el funcionamiento de cada una de ellas, ya que, en la programación orientada a objetos, estas sentencias siguen utilizándose en gran medida.
+            </p>
+        </section>
+        <section id='conditionals'>
+            <h2>
+                Sentencias condicionales
+            </h2>
+        </section>
+        <section id="iteratives">
+            <h2>
+                Sentencias iterativas
+            </h2>
+        </section>
+        <section id="exercise">
+            <h2>
+                Ejercicio
+            </h2>
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
