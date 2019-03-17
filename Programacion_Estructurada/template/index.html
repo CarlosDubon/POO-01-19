@@ -38,10 +38,11 @@
                     <div></div>
                     <ul>
                         <li><a href="#introduction">Introdución</a><i class="fas fa-ellipsis-v"></i></li>
-                        <li><a href="#down-netbeans">Sentencias condicionales</a><i class="fas fa-download"></i></li>
-                        <li><a href="#down-jdk">Sentencias iterativas</a><i class="fas fa-download"></i></li>
-                        <li><a href="#down-jdk">Estructuras de datos básicas</a><i class="fas fa-download"></i></li>
-                        <li><a href="#inst-jdk">Ejecicios</a><i class="fas fa-file-import"></i></li>
+                        <li><a href="#conditions">Sentencias condicionales</a><i class="fas fa-question"></i></li>
+                        <li><a href="#bucles">Sentencias iterativas</a><i class="fas fa-retweet"></i></li>
+                        <li><a href="#lists">Estructuras de datos básicas</a><i class="fas fa-stream"></i></li>
+                        <li><a href="#functions">Funciones</a><i class="fas fa-code"></i></li>
+                        <li><a href="#exercices">Ejecicios</a><i class="fas fa-dumbbell"></i></li>
                     </ul>
                 </nav>
             </div>
@@ -99,41 +100,274 @@
             </h2>
             <!-- Single paragraphs -->
             <p>
-                El siguiente documento tiene como objetivo principal retroalimentar las sentencias y estructuras básicas, es importante saber el funcionamiento de cada una de ellas, ya que, en la programación orientada a objetos, estas sentencias siguen utilizándose en gran medida.
+                El siguiente documento tiene como objetivo principal retroalimentar las sentencias y estructuras
+                básicas, es importante saber el funcionamiento de cada una de ellas, ya que, en la programación
+                orientada a objetos, estas sentencias siguen utilizándose en gran medida.
             </p>
         </section>
-        <section id='conditionals'>
+        <section id='conditions'>
             <h2>
                 Sentencias condicionales
             </h2>
             <p>
-                Se definen como instrucciones o grupo de instrucciones que se pueden ejecutar o no en función a un valor de condición.
+                Se definen como instrucciones o grupo de instrucciones que se pueden ejecutar o no en función a un valor
+                de condición.
             </p>
             <article>
                 <h3>
                     Sentencia IF
                 </h3>
                 <p>
-                    
+                    Ejecuta un bloque de instrucciones si la condición es verdadera, además pueden omitirse las llaves
+                    de apertura y de cierre si solo se va a ejecutar una instrucción.
                 </p>
+                <pre>
+                    <code class='java'>
+                        if (condición) 
+                            // si solo se ejecutara una instrucción se pueden omitir las llaves { } 
+
+                        if (condición) { 
+                            // bloque de código a ejecutarse si la condición es verdadera 
+                        }
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (50 > 28)
+                            System.out.println("50 es mayor que 28"); 
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Sentencia IF-ELSE
+                </h3>
+                <p>
+                    Ejecuta un bloque de instrucciones si la condición es falsa, sin embargo esta palabra reservada else
+                    es opcional, ya que es necesaria solo si se necesita ejecutar un conjunto de instrucciones si la
+                    condición es falta. Por lo tanto si la condición del if no se cumple y no queremos realizar una
+                    acción al no cumplirse la condición, podemos usar solamente la sentencia if.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (condición) { 
+                            // bloque de código a ejecutarse si la condición es verdadera 
+                        } else { 
+                            // bloque de código a ejecutarse si la condición es falsa 
+                        }
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (nota_Final_POO>= 6) { 
+                            System.out.println("La pase! :D"); 
+                        } else { 
+                            System.out.println(" :( "); 
+                        }   
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Operedor Ternario (IF de una linea);
+                </h3>
+                <p>
+                    Otra forma de sintaxis para el uso del if-else, y resumirlo en pocas líneas de código, además al
+                    igual que en el if-else podemos anidar sentencias condicionales.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class='java'>
+                        (condición)?expresionVerdadera:expresionFalsa;
+                        /*anidamiento de operador ternario*/ 
+                        (condicion1) ? (ExpresionVerdadera: condicion2) ? ExpresionVerdadera:ExpresionFalsa; 
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        Calendar cal = Calendar.getInstance(); 
+                        int hora= cal.get(Calendar.HOUR_OF_DAY); 
+                        String resultado = (hora < 7) ? "puedo seguir durmiendo" : "Es hora de ir a la universidad"; 
+                        System.out.println(resultado);    
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    IF-ELSE Anidados
+                </h3>
+                <p>
+                    Podemos volver a usar sentencias condicionales if luego de un else, es lo que se conoce como if-else
+                    anidados, ya que a veces se presenta el caso que necesitamos evaluar más condiciones o expresiones
+                    por si la expresión o condición inicial no se ha cumplido y a partir de ello ejecutar una secuencia
+                    de instrucciones.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class="java">
+                            if (condición) { 
+                                // bloque de código a ejecutarse si la condición es verdadera 
+                            } else { 
+                                /*Inicio de anidamiento*/ 
+                                if (condición) { 
+                                    // bloque de código a ejecutarse si la condición es verdadera 
+                                } 
+                                else { 
+                                    if (condicion){ 
+                                        // Bloque de código 
+                                    } else { 
+                                        /* Podríamos continuar el anidamiento más veces*/ 
+                                    } 
+                                } 
+                            } 
+                                
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class="java">
+                            int valor=5 
+                            //tomando en cuenta números enteros positivos 
+                            if (valor>= 0 && valor<=10) { 
+                                System.out.println("El valor esta en el rango de 0 a 10"); 
+                            } else { 
+                                if (valor>10 && valor<=15) { 
+                                    System.out.println("El valor está en el rango de 11 a 15"); 
+                                } else{ 
+                                    System.out.println("El valor es mayor a 15"); 
+                                }
+                            } 
+                            
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Sentencia SWITCH
+                </h3>
+                <p>
+                    Ejecuta un bloque de instrucciones dependiendo del valor de la expresión evaluada 
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class="java">
+                            switch(expresión) { 
+                                case a: 
+                                // bloque de código 
+                                    break; 
+                                case b: 
+                                // bloque de código 
+                                    break; 
+                                default: 
+                                // bloque de código 
+                            } 
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class="java">
+                            int day = 4; switch (day) { 
+                                case 1: 
+                                System.out.println("Lunes"); 
+                                    break; 
+                                case 2: 
+                                    System.out.println("Martes"); 
+                                    break; 
+                                case 3: 
+                                    System.out.println("Miercoles"); 
+                                    break; 
+                                case 4: 
+                                    System.out.println("Jueves"); 
+                                    break;
+                                case 5: 
+                                    System.out.println("Viernes"); 
+                                    break; 
+                                case 6: 
+                                    System.out.println("Sabado"); 
+                                    break; 
+                                case 7: 
+                                    System.out.println("Domingo"); 
+                                    break; 
+                                default: 
+                                    System.out.println("el valor no corresponde al rango de días de la semana"); 
+                            } 
+                    </code>
+                </pre>
             </article>
         </section>
-        <section id="iteratives">
+        <section id="bucles">
             <h2>
                 Sentencias iterativas
             </h2>
         </section>
-        <section id="iteratives">
+        <section id="lists">
             <h2>
-               Estructura de datos
+                Estructura de datos
             </h2>
         </section>
-        <section id="iteratives">
+        <section id="functions">
             <h2>
-               Funciones
+                Funciones
             </h2>
+            <p>
+                Se pueden categorizar funciones el conjunto de lineas de instrucciones, encapsulados en un bloque,
+                usualmente reciben parámetros, cuyos valores se utilizan para efectuar operaciones y adicionalmente
+                retornan un valor, en caso de no retornar un valor, no se categorizan como una función. En java las
+                funciones usan el modificador <em>static</em>.
+            </p>
+            <h4>
+                Sintaxis
+            </h4>
+            <pre>
+                <code class='java'>
+                    public static [tipo_dato_a_retornar|void] [nombre_función] ([tipo_dato][parametro1],[tipo_dato][parametro2]...){
+                        //Bloque de código aquí
+                    } 
+                </code>
+            </pre>
+            <h4>
+                Ejemplo
+            </h4>
+            <pre>
+                <code class="java">
+                    public static void main(){
+                        int[] numbers = {1,2,3,4};
+                        int c = sumaEnteros(numbers); //<- se obitene el resultado en la variable c
+                    }
+                    public static int sumaEnteros(int[] a){
+                        int b = 0;
+                        for(int i=0 ; i < a.length ; i++){
+                            b = b + a[i] ;
+                        }
+                        return b;
+                    }
+                </code>
+            </pre>
+
         </section>
-        <section id="exercise">
+        <section id="exercises">
             <h2>
                 Ejercicio
             </h2>
