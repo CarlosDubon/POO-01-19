@@ -123,11 +123,11 @@
                 </p>
                 <pre>
                     <code class='java'>
-                        if (condición) 
-                            // si solo se ejecutara una instrucción se pueden omitir las llaves { } 
+                        if (condición)
+                            // si solo se ejecutara una instrucción se pueden omitir las llaves { }
 
-                        if (condición) { 
-                            // bloque de código a ejecutarse si la condición es verdadera 
+                        if (condición) {
+                            // bloque de código a ejecutarse si la condición es verdadera
                         }
                     </code>
                 </pre>
@@ -137,7 +137,7 @@
                 <pre>
                     <code class='java'>
                         if (50 > 28)
-                            System.out.println("50 es mayor que 28"); 
+                            System.out.println("50 es mayor que 28");
                     </code>
                 </pre>
             </article>
@@ -156,10 +156,10 @@
                 </h4>
                 <pre>
                     <code class='java'>
-                        if (condición) { 
-                            // bloque de código a ejecutarse si la condición es verdadera 
-                        } else { 
-                            // bloque de código a ejecutarse si la condición es falsa 
+                        if (condición) {
+                            // bloque de código a ejecutarse si la condición es verdadera
+                        } else {
+                            // bloque de código a ejecutarse si la condición es falsa
                         }
                     </code>
                 </pre>
@@ -168,11 +168,11 @@
                 </h4>
                 <pre>
                     <code class='java'>
-                        if (nota_Final_POO>= 6) { 
-                            System.out.println("La pase! :D"); 
-                        } else { 
-                            System.out.println(" :( "); 
-                        }   
+                        if (nota_Final_POO>= 6) {
+                            System.out.println("La pase! :D");
+                        } else {
+                            System.out.println(" :( ");
+                        }
                     </code>
                 </pre>
             </article>
@@ -190,8 +190,8 @@
                 <pre>
                     <code class='java'>
                         (condición)?expresionVerdadera:expresionFalsa;
-                        /*anidamiento de operador ternario*/ 
-                        (condicion1) ? (ExpresionVerdadera: condicion2) ? ExpresionVerdadera:ExpresionFalsa; 
+                        /*anidamiento de operador ternario*/
+                        (condicion1) ? (ExpresionVerdadera: condicion2) ? ExpresionVerdadera:ExpresionFalsa;
                     </code>
                 </pre>
                 <h4>
@@ -199,10 +199,10 @@
                 </h4>
                 <pre>
                     <code class='java'>
-                        Calendar cal = Calendar.getInstance(); 
-                        int hora= cal.get(Calendar.HOUR_OF_DAY); 
-                        String resultado = (hora < 7) ? "puedo seguir durmiendo" : "Es hora de ir a la universidad"; 
-                        System.out.println(resultado);    
+                        Calendar cal = Calendar.getInstance();
+                        int hora= cal.get(Calendar.HOUR_OF_DAY);
+                        String resultado = (hora < 7) ? "puedo seguir durmiendo" : "Es hora de ir a la universidad";
+                        System.out.println(resultado);
                     </code>
                 </pre>
             </article>
@@ -221,22 +221,22 @@
                 </h4>
                 <pre>
                     <code class="java">
-                            if (condición) { 
-                                // bloque de código a ejecutarse si la condición es verdadera 
-                            } else { 
-                                /*Inicio de anidamiento*/ 
-                                if (condición) { 
-                                    // bloque de código a ejecutarse si la condición es verdadera 
-                                } 
-                                else { 
-                                    if (condicion){ 
-                                        // Bloque de código 
-                                    } else { 
-                                        /* Podríamos continuar el anidamiento más veces*/ 
-                                    } 
-                                } 
-                            } 
-                                
+                            if (condición) {
+                                // bloque de código a ejecutarse si la condición es verdadera
+                            } else {
+                                /*Inicio de anidamiento*/
+                                if (condición) {
+                                    // bloque de código a ejecutarse si la condición es verdadera
+                                }
+                                else {
+                                    if (condicion){
+                                        // Bloque de código
+                                    } else {
+                                        /* Podríamos continuar el anidamiento más veces*/
+                                    }
+                                }
+                            }
+
                     </code>
                 </pre>
                 <h4>
@@ -244,18 +244,18 @@
                 </h4>
                 <pre>
                     <code class="java">
-                            int valor=5 
-                            //tomando en cuenta números enteros positivos 
-                            if (valor>= 0 && valor<=10) { 
-                                System.out.println("El valor esta en el rango de 0 a 10"); 
-                            } else { 
-                                if (valor>10 && valor<=15) { 
-                                    System.out.println("El valor está en el rango de 11 a 15"); 
-                                } else{ 
-                                    System.out.println("El valor es mayor a 15"); 
+                            int valor=5
+                            //tomando en cuenta números enteros positivos
+                            if (valor>= 0 && valor<=10) {
+                                System.out.println("El valor esta en el rango de 0 a 10");
+                            } else {
+                                if (valor>10 && valor<=15) {
+                                    System.out.println("El valor está en el rango de 11 a 15");
+                                } else{
+                                    System.out.println("El valor es mayor a 15");
                                 }
-                            } 
-                            
+                            }
+
                     </code>
                 </pre>
             </article>
@@ -271,16 +271,16 @@
                 </h4>
                 <pre>
                     <code class="java">
-                            switch(expresión) { 
-                                case a: 
-                                // bloque de código 
-                                    break; 
-                                case b: 
-                                // bloque de código 
-                                    break; 
-                                default: 
-                                // bloque de código 
-                            } 
+                            switch(expresión) {
+                                case a:
+                                // bloque de código
+                                    break;
+                                case b:
+                                // bloque de código
+                                    break;
+                                default:
+                                // bloque de código
+                            }
                     </code>
                 </pre>
                 <h4>
@@ -288,31 +288,31 @@
                 </h4>
                 <pre>
                     <code class="java">
-                            int day = 4; switch (day) { 
-                                case 1: 
-                                System.out.println("Lunes"); 
-                                    break; 
-                                case 2: 
-                                    System.out.println("Martes"); 
-                                    break; 
-                                case 3: 
-                                    System.out.println("Miercoles"); 
-                                    break; 
-                                case 4: 
-                                    System.out.println("Jueves"); 
+                            int day = 4; switch (day) {
+                                case 1:
+                                System.out.println("Lunes");
                                     break;
-                                case 5: 
-                                    System.out.println("Viernes"); 
-                                    break; 
-                                case 6: 
-                                    System.out.println("Sabado"); 
-                                    break; 
-                                case 7: 
-                                    System.out.println("Domingo"); 
-                                    break; 
-                                default: 
-                                    System.out.println("el valor no corresponde al rango de días de la semana"); 
-                            } 
+                                case 2:
+                                    System.out.println("Martes");
+                                    break;
+                                case 3:
+                                    System.out.println("Miercoles");
+                                    break;
+                                case 4:
+                                    System.out.println("Jueves");
+                                    break;
+                                case 5:
+                                    System.out.println("Viernes");
+                                    break;
+                                case 6:
+                                    System.out.println("Sabado");
+                                    break;
+                                case 7:
+                                    System.out.println("Domingo");
+                                    break;
+                                default:
+                                    System.out.println("el valor no corresponde al rango de días de la semana");
+                            }
                     </code>
                 </pre>
             </article>
@@ -405,7 +405,7 @@
                 <p>
                     Al igual que el ciclo while, este bucle se basa en la operación de una expresión lógica. El Do-while
                     se diferencia en la manera en la que ejecuta el flujo de datos, ya que primero ejecuta el bloque de
-                    instrucciones y posteriormente hace la operación lógica de comparación. Con lo cual se garantiza que 
+                    instrucciones y posteriormente hace la operación lógica de comparación. Con lo cual se garantiza que
                     se ejecute siempre por lo menos una vez
                 </p>
                 <h4>
@@ -740,7 +740,7 @@
                 <code class='java'>
                     public static [tipo_dato_a_retornar|void] [nombre_función] ([tipo_dato][parametro1],[tipo_dato][parametro2]...){
                         //Bloque de código aquí
-                    } 
+                    }
                 </code>
             </pre>
             <h4>
@@ -763,7 +763,7 @@
             </pre>
 
         </section>
-        <!--<section id="exercises">
+        <section id="exercises">
             <h2>
                 Ejercicio
             </h2>
@@ -776,8 +776,46 @@
                         Se deben utilizar arreglos estáticos.
                     </ul>
                 </li>
+                <li>
+                    Juego de ahorcado: Se le pide crear el juego del ahorcado, el cual tendrá 3 palabras diferentes. Ingrese las palabras en un arreglo de Strings de longitud 3. Utilice una función para generar números aleatorios entre 0-2, de tal forma que se seleccione al azar una palabra del arreglo. Cree un menú que tenga dos opciones 1-jugar 2-salir. Si selecciona jugar, mandar a llamar una función que tenga la lógica para jugar ahorcado. Los String en Java también se consideran arreglos, por lo que se pueden iterar de la siguiente manera:
+                    <pre>
+                      <code class="java">
+                        String texto = "programacion";
+
+                        for(int i=0; i < texto.length(); i++){
+                          System.out.println(texto.charAt(i)); // charAt(indice); se ocupa para obtener un caracter
+                          //Mostrará 'p' en el caso que texto.charAt(0);
+                        }
+                      </code>
+                   </pre>
+
+                    Si la palabra es “elemento”, La salida por cada intento debe ser siguiendo esta lógica:
+                    <pre>
+                                              Intentos: 0
+                                              [_][_][_][_][_][_][_][_]
+                                              Introduzca una letra: f
+
+                                              Intentos: 1
+                                              [_][_][_][_][_][_][_][_]
+                                              Introduzca una letra: e
+
+                                              Intentos: 2
+                                              [e][_][e][_][e][_][_][_]
+                                              Introduzca una letra: m
+
+                                              Intentos: 3
+                                              [e][_][e][m][e][_][_][_]
+
+                                                        .
+                                                        .
+                                                        .
+                    </pre>
+                    El número máximo de intentos debe ser 10. Mostrar mensaje si se gana y también si se pierda. Se gana si el número de intentos es menor al máximo.
+
+                </li>
             </ol>
-        </section>-->
+
+        </section>
     </article>
     <!-- Footer Implementation -->
     <footer>
