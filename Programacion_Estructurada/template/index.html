@@ -114,7 +114,7 @@
                     Sentencia IF
                 </h3>
                 <p>
-                    
+
                 </p>
             </article>
         </section>
@@ -127,6 +127,283 @@
             <h2>
                Estructura de datos
             </h2>
+            <p>
+              Nos proveen una forma de administrar la información, de tal forma que se pueda manipular, realizar operaciones de busqueda e insertar datos de manera eficiente.
+              Ejemplos de estructuras de datos son las siguientes:
+              <ul>
+                <li>Arrays (Arreglos)</li>
+                <li>Lists (Listas enlazadas)</li>
+                <li>Collections (Colecciones)</li>
+              </ul>
+            </p>
+            <pre> <h3>Arrays (Arreglos)</h3></pre>
+            <p>
+              Los arreglos son una estructura de datos que, una vez se inicializa con un tamaño específico, ya no puede cambiar. Importante destacar que solo admite almacenar datos de un mismo tipo, una vez declarada.
+              La forma en la que se declara un arreglo es la siguiente:
+                <pre style="text-align:center; font-size: 18px;">tipo_de_dato[] arreglo;</pre>
+              Así se declara un arreglo, pero es necesario especificar un tamaño para poder comenzar a usarlo. Para ello se hace lo siguiente:
+                <pre style="text-align:center; font-size: 18px;">arreglo = new tipo_de_dato[tamaño_de_arreglo];</pre>
+              Donde tipo_de_dato puede ser: int, float, double, boolean, cualquier instancia de objeto, etc.
+
+              El indice en el que comienza a contar, como en la mayoría de los lenguajes de programación, es cero. Si se recorre el arreglo sin haber llenado sus posiciones con un valor; el valor por defecto es cero para cada posición.
+              Ejemplo:
+              <pre>
+                <code class="java">
+  /*
+   * To change this license header, choose License Headers in Project Properties.
+   * To change this template file, choose Tools | Templates
+   * and open the template in the editor.
+   */
+  package arreglolistas;
+
+  import java.util.ArrayList;
+  import java.util.List;
+  import java.util.Scanner;
+
+
+  public class ArregloListas {
+
+      /**
+       * @param args the command line arguments
+       */
+      public static void main(String[] args) {
+          Scanner entrada = new Scanner(System.in);
+          int[] arreglo = new int[10];
+          boolean flag = true;
+
+
+          for (int i = 0; i < arreglo.length; i++) {
+              System.out.print("Ingrese un numero al arreglo: ");
+              arreglo[i] = entrada.nextInt(); entrada.nextLine();
+          }
+
+          do{
+              System.out.println("***¿Que desea hacer?***");
+              System.out.println("1-Llenar arreglo\n2-Mostrar arreglo\n3-Encontrar mayor\n4-Encontrar menor\n5-Encontrar promedio\n6-Salir");
+              int decision = entrada.nextInt(); entrada.nextLine();
+
+              switch(decision){
+                  case 1:
+                      llenarArreglo(arreglo, entrada);
+                      mostrarArreglo(arreglo);
+                      break;
+                  case 2:
+                      mostrarArreglo(arreglo);
+                      break;
+                  case 3:
+                      mostrarArreglo(arreglo);
+                      System.out.println("El numero mayor es: " + encontrarMayor(arreglo));
+                      break;
+                  case 4:
+                      mostrarArreglo(arreglo);
+                      System.out.println("El numero mayor es: " + encontrarMenor(arreglo));
+                      break;
+                  case 5:
+                      mostrarArreglo(arreglo);
+                      System.out.println("El numero mayor es: " + encontrarPromedio(arreglo));
+                      break;
+                  case 6:
+                      flag = false;
+                      break;
+              }
+
+          }while(flag);
+
+
+      }
+
+
+      public static void llenarArreglo(int[] arreglo, Scanner entrada){
+          for (int i = 0; i < arreglo.length; i++) {
+              System.out.println("Ingrese valor:");
+              arreglo[i] = entrada.nextInt();
+          }
+      }
+
+      public static void mostrarArreglo(int[] arreglo){
+          for (int i = 0; i < arreglo.length; i++) {
+              System.out.print("[" + arreglo[i] + "]");
+          }
+          System.out.println();
+      }
+
+      public static int encontrarMayor(int[] arreglo){
+
+             int mayor = arreglo[0];
+
+          for (int i = 0; i < arreglo.length; i++) {
+
+              if(arreglo[i] > mayor){
+                  mayor = arreglo[i];
+              }
+          }
+          return mayor;
+      }
+
+
+      public static int encontrarMenor(int[] arreglo){
+
+          int menor = arreglo[0];
+
+          for (int i = 0; i < arreglo.length; i++) {
+
+              if(arreglo[i] < menor){
+                  menor = arreglo[i];
+              }
+          }
+          return menor;
+      }
+
+      public static double encontrarPromedio(int[] arreglo){
+
+          double suma = 0;
+
+          for (int i = 0; i < arreglo.length; i++) {
+              suma += arreglo[i];
+          }
+          return suma / arreglo.length;
+      }
+
+
+  }
+
+
+                </code>
+              </pre>
+
+
+            </p>
+
+              <pre> <h3>Collections (ArrayList)</h3></pre>
+
+            <p>
+              Es una colección de elementos. Lo importante del termino ‘colección’ es que se caracterizan por ser dinámicos, a diferencia de los arreglos, los cuales necesitan que se especifique el tamaño sobre el que se trabajará. De igual forma, una característica importante es que los elementos que se almacenan en una colección pueden ser de cualquier tipo de dato, ya que los valores que se guardan se consideran elementos de tipo ‘object’, lo que significa que pueden ser: Integer, Float, String,Boolean, una instancia de clase, etc.
+              Para utilizarlo es necesario declararlo de la siguiente manera:
+                <pre style="text-align:center; font-size: 18px;">ArrayList lista = new ArrayList<>();</pre>
+              De esta manera se tiene un arreglo <strong>dinámico</strong> de objetos (pueden ser de cualquier tipo.). Sin embargo a veces se quiere especificar el tipo de dato que aceptará únicamente. Para ello se escribe de la siguiente manera:
+                <pre style="text-align:center; font-size: 18px;">ArrayList&lt;tipo_de_dato&gt; lista = new ArrayList&lt;tipo_de_dato&gt;();</pre>
+              Estas listas tiene funciones asociadas, por el momento diremos que son métodos de la lista. Dentro de estas, encontramos las siguientes:
+              <ul>
+                <li><strong>add(Object);</strong> Para añadir elementos a la lista. Se ingresan en secuencia, se le asigna un indice a cada elemento, y dentro de las listas pueden existir valores repetidos.</li>
+                <li><strong>get(int);</strong> Para obetener elementos de la lista respecto a indice. Comienza con indice 0</li>
+                <li><strong>size();</strong> Retorna el tamaño del ArrayList</li>
+                <li><strong>contains(Object);</strong> Para buscar elementos dentro de la lista. Si lo encuentra regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span style="color:#1FBED6;">false</span></li>
+                <li><strong>remove(Object);</strong> Para eliminar un elemento dentro de la lista. Si lo encuentra regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span style="color:#1FBED6;">false</span></li>
+              </ul>
+
+              Para utilizar estos métodos se debe tomar la lista que se declaro más arriba (en la que se acepta cualquier tipo de objeto) y considerar la siguiente notación:
+                <pre style="text-align:center; font-size: 18px;">
+                  <code class="java">
+  lista.add("Este es un texto");
+
+  lista.add(2);
+
+  lista.add(true);
+                  </code>
+                </pre>
+
+                Ejemplo:
+
+                <pre>
+                  <code class="java">
+  /*
+   * To change this license header, choose License Headers in Project Properties.
+   * To change this template file, choose Tools | Templates
+   * and open the template in the editor.
+   */
+  package arreglolistas;
+
+  import java.util.ArrayList;
+  import java.util.List;
+  import java.util.Scanner;
+
+
+  public class ArregloListas {
+
+      /**
+       * @param args the command line arguments
+       */
+      public static void main(String[] args) {
+           Scanner entrada = new Scanner(System.in);
+          ArrayList lista  = new ArrayList();
+
+          boolean flag = true;
+
+
+          lista.add(2);
+          lista.add(2);
+
+
+          do{
+              System.out.println("Elementos en la lista:");
+
+              for (int i = 0; i < lista.size(); i++) {
+                  System.out.println("Posicion #" + (i+1) + " " + lista.get(i));
+              }
+
+              System.out.println("***¿Que desea hacer?***");
+              System.out.print("1-Agregar a la lista\n2-Verificar si esta en la lista \n3-Eliminar de la lista\n4-Salir\n");
+
+
+              int decision = entrada.nextInt();
+              entrada.nextLine();
+
+              switch(decision){
+                  case 1:
+
+                      System.out.println("***Ingrese un elemento***");
+
+                      lista.add(entrada.nextLine());
+
+
+                      break;
+
+                  case 2:
+                      System.out.println("***¿Qué elemento desea buscar?***");
+
+                      String elemento = entrada.nextLine();
+
+                      if(elemento.contains(elemento)){
+                          System.out.println(elemento + " se encuentra en la lista");
+                      }else{
+                          System.out.println(elemento + " no está en la lista");
+                      }
+
+                      break;
+
+
+                  case 3:
+
+                      System.out.println("***¿Qué elemento desea eliminar?***");
+
+                      String elementoAEliminar = entrada.nextLine();
+
+                      if(lista.remove(elementoAEliminar)){
+                          System.out.println(elementoAEliminar + " se eliminó");
+                      }else{
+                          System.out.println(elementoAEliminar + " no se pudo eliminar");
+                      }
+
+                      break;
+
+                  case 4:
+                      flag = false;
+                      break;
+              }
+
+          }while(flag);
+
+
+
+      }
+
+
+  }
+
+
+                  </code>
+                </pre>
+            </p>
         </section>
         <section id="iteratives">
             <h2>
