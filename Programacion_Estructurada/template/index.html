@@ -38,10 +38,11 @@
                     <div></div>
                     <ul>
                         <li><a href="#introduction">Introdución</a><i class="fas fa-ellipsis-v"></i></li>
-                        <li><a href="#down-netbeans">Sentencias condicionales</a><i class="fas fa-download"></i></li>
-                        <li><a href="#down-jdk">Sentencias iterativas</a><i class="fas fa-download"></i></li>
-                        <li><a href="#down-jdk">Estructuras de datos básicas</a><i class="fas fa-download"></i></li>
-                        <li><a href="#inst-jdk">Ejecicios</a><i class="fas fa-file-import"></i></li>
+                        <li><a href="#conditions">Sentencias condicionales</a><i class="fas fa-question"></i></li>
+                        <li><a href="#bucles">Sentencias iterativas</a><i class="fas fa-retweet"></i></li>
+                        <li><a href="#lists">Estructuras de datos básicas</a><i class="fas fa-stream"></i></li>
+                        <li><a href="#functions">Funciones</a><i class="fas fa-code"></i></li>
+                        <li><a href="#exercices">Ejecicios</a><i class="fas fa-dumbbell"></i></li>
                     </ul>
                 </nav>
             </div>
@@ -99,55 +100,319 @@
             </h2>
             <!-- Single paragraphs -->
             <p>
-                El siguiente documento tiene como objetivo principal retroalimentar las sentencias y estructuras básicas, es importante saber el funcionamiento de cada una de ellas, ya que, en la programación orientada a objetos, estas sentencias siguen utilizándose en gran medida.
+                El siguiente documento tiene como objetivo principal retroalimentar las sentencias y estructuras
+                básicas, es importante saber el funcionamiento de cada una de ellas, ya que, en la programación
+                orientada a objetos, estas sentencias siguen utilizándose en gran medida.
             </p>
         </section>
-        <section id='conditionals'>
+        <section id='conditions'>
             <h2>
                 Sentencias condicionales
             </h2>
             <p>
-                Se definen como instrucciones o grupo de instrucciones que se pueden ejecutar o no en función a un valor de condición.
+                Se definen como instrucciones o grupo de instrucciones que se pueden ejecutar o no en función a un valor
+                de condición.
             </p>
             <article>
                 <h3>
                     Sentencia IF
                 </h3>
                 <p>
-
+                    Ejecuta un bloque de instrucciones si la condición es verdadera, además pueden omitirse las llaves
+                    de apertura y de cierre si solo se va a ejecutar una instrucción.
                 </p>
+                <pre>
+                    <code class='java'>
+                        if (condición) 
+                            // si solo se ejecutara una instrucción se pueden omitir las llaves { } 
+
+                        if (condición) { 
+                            // bloque de código a ejecutarse si la condición es verdadera 
+                        }
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (50 > 28)
+                            System.out.println("50 es mayor que 28"); 
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Sentencia IF-ELSE
+                </h3>
+                <p>
+                    Ejecuta un bloque de instrucciones si la condición es falsa, sin embargo esta palabra reservada else
+                    es opcional, ya que es necesaria solo si se necesita ejecutar un conjunto de instrucciones si la
+                    condición es falta. Por lo tanto si la condición del if no se cumple y no queremos realizar una
+                    acción al no cumplirse la condición, podemos usar solamente la sentencia if.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (condición) { 
+                            // bloque de código a ejecutarse si la condición es verdadera 
+                        } else { 
+                            // bloque de código a ejecutarse si la condición es falsa 
+                        }
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        if (nota_Final_POO>= 6) { 
+                            System.out.println("La pase! :D"); 
+                        } else { 
+                            System.out.println(" :( "); 
+                        }   
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Operedor Ternario (IF de una linea);
+                </h3>
+                <p>
+                    Otra forma de sintaxis para el uso del if-else, y resumirlo en pocas líneas de código, además al
+                    igual que en el if-else podemos anidar sentencias condicionales.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class='java'>
+                        (condición)?expresionVerdadera:expresionFalsa;
+                        /*anidamiento de operador ternario*/ 
+                        (condicion1) ? (ExpresionVerdadera: condicion2) ? ExpresionVerdadera:ExpresionFalsa; 
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        Calendar cal = Calendar.getInstance(); 
+                        int hora= cal.get(Calendar.HOUR_OF_DAY); 
+                        String resultado = (hora < 7) ? "puedo seguir durmiendo" : "Es hora de ir a la universidad"; 
+                        System.out.println(resultado);    
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    IF-ELSE Anidados
+                </h3>
+                <p>
+                    Podemos volver a usar sentencias condicionales if luego de un else, es lo que se conoce como if-else
+                    anidados, ya que a veces se presenta el caso que necesitamos evaluar más condiciones o expresiones
+                    por si la expresión o condición inicial no se ha cumplido y a partir de ello ejecutar una secuencia
+                    de instrucciones.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class="java">
+                            if (condición) { 
+                                // bloque de código a ejecutarse si la condición es verdadera 
+                            } else { 
+                                /*Inicio de anidamiento*/ 
+                                if (condición) { 
+                                    // bloque de código a ejecutarse si la condición es verdadera 
+                                } 
+                                else { 
+                                    if (condicion){ 
+                                        // Bloque de código 
+                                    } else { 
+                                        /* Podríamos continuar el anidamiento más veces*/ 
+                                    } 
+                                } 
+                            } 
+                                
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class="java">
+                            int valor=5 
+                            //tomando en cuenta números enteros positivos 
+                            if (valor>= 0 && valor<=10) { 
+                                System.out.println("El valor esta en el rango de 0 a 10"); 
+                            } else { 
+                                if (valor>10 && valor<=15) { 
+                                    System.out.println("El valor está en el rango de 11 a 15"); 
+                                } else{ 
+                                    System.out.println("El valor es mayor a 15"); 
+                                }
+                            } 
+                            
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Sentencia SWITCH
+                </h3>
+                <p>
+                    Ejecuta un bloque de instrucciones dependiendo del valor de la expresión evaluada
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class="java">
+                            switch(expresión) { 
+                                case a: 
+                                // bloque de código 
+                                    break; 
+                                case b: 
+                                // bloque de código 
+                                    break; 
+                                default: 
+                                // bloque de código 
+                            } 
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class="java">
+                            int day = 4; switch (day) { 
+                                case 1: 
+                                System.out.println("Lunes"); 
+                                    break; 
+                                case 2: 
+                                    System.out.println("Martes"); 
+                                    break; 
+                                case 3: 
+                                    System.out.println("Miercoles"); 
+                                    break; 
+                                case 4: 
+                                    System.out.println("Jueves"); 
+                                    break;
+                                case 5: 
+                                    System.out.println("Viernes"); 
+                                    break; 
+                                case 6: 
+                                    System.out.println("Sabado"); 
+                                    break; 
+                                case 7: 
+                                    System.out.println("Domingo"); 
+                                    break; 
+                                default: 
+                                    System.out.println("el valor no corresponde al rango de días de la semana"); 
+                            } 
+                    </code>
+                </pre>
             </article>
         </section>
-        <section id="iteratives">
+        <section id="bucles">
             <h2>
                 Sentencias iterativas
             </h2>
+            <p>
+                Dentro de la programación, los bucles juegan un papel fundamental para la resolución de problemas en
+                donde necesitamos realizar un número determinado de veces una tarea o por lo menos cuantas veces sea
+                necesario. Los bucles también son conocidos como ciclos y son estructuras de control que permiten
+                modificar el flujo de ejecución de las instrucciones de un programa por medio de iteraciones. Los bucles
+                se basan sobre este concepto:
+            </p>
+            <figure>
+                <img src='../assets/images/template/flujo.png' />
+            </figure>
+            <p>
+                Existen diferentes tipos de ciclos y cada uno de ellos tiene su manera de ser implementado dependiendo
+                del contexto del problema planteado. En Java encontramos los siguientes: <b>ciclo For</b>, <b>ciclo
+                    While</b> y <b>ciclo Do-While</b>.
+            </p>
+            <article>
+                <h3>
+                    Ciclo FOR
+                </h3>
+                <p>
+                    El objetivo de este ciclo es realizar un número determinado de veces una tarea. Dentro de la
+                    estructura del ciclo for se define una variable de control que en la mayoría de casos actúa como
+                    acumulador, este se encarga de contabilizar el número de veces que se ejecutará una instrucción.
+                    Posteriormente se establece una condición de paro en donde nuestra variable de control que actúa
+                    como acumulador debe ir implicada ya que es donde establecemos la condición de paro respecto al
+                    número de veces que deseamos ejecutar una instrucción. Por último, tenemos que hacer una operación
+                    matemática con nuestro acumulador para poder contabilizar el número de veces que se ejecutará la
+                    instrucción.
+                </p>
+                <h4>
+                    Sintaxis
+                </h4>
+                <pre>
+                    <code class='java'>
+                        for([acomulador];[condition];[operación]){
+                            //Bloque de codigo
+                        }
+                    </code>
+                </pre>
+                <h4>
+                    Ejemplo
+                </h4>
+                <pre>
+                    <code class='java'>
+                        for(int i=0;i < 10; i++){
+                            System.out.println(i+" x 5 =" + (5*i))
+                        }
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Ciclo WHILE
+                </h3>
+                <p>
+                    Este ciclo es basado en los resultados de una expresión lógica o condicional. El propósito es
+                    repetir un bloque de código mientras una condición se mantenga verdadera.
+                </p>
+                <h4>Sintaxis</h4>
+                
+            </article>
         </section>
-        <section id="iteratives">
+        <section id="lists">
             <h2>
-               Estructura de datos
+                Estructura de datos
             </h2>
             <p>
-              Nos proveen una forma de administrar la información, de tal forma que se pueda manipular, realizar operaciones de busqueda e insertar datos de manera eficiente.
-              Ejemplos de estructuras de datos son las siguientes:
-              <ul>
-                <li>Arrays (Arreglos)</li>
-                <li>Lists (Listas enlazadas)</li>
-                <li>Collections (Colecciones)</li>
-              </ul>
+                Nos proveen una forma de administrar la información, de tal forma que se pueda manipular, realizar
+                operaciones de busqueda e insertar datos de manera eficiente.
+                Ejemplos de estructuras de datos son las siguientes:
+                <ul>
+                    <li>Arrays (Arreglos)</li>
+                    <li>Lists (Listas enlazadas)</li>
+                    <li>Collections (Colecciones)</li>
+                </ul>
             </p>
             <pre> <h3>Arrays (Arreglos)</h3></pre>
             <p>
-              Los arreglos son una estructura de datos que, una vez se inicializa con un tamaño específico, ya no puede cambiar. Importante destacar que solo admite almacenar datos de un mismo tipo, una vez declarada.
-              La forma en la que se declara un arreglo es la siguiente:
+                Los arreglos son una estructura de datos que, una vez se inicializa con un tamaño específico, ya no
+                puede cambiar. Importante destacar que solo admite almacenar datos de un mismo tipo, una vez declarada.
+                La forma en la que se declara un arreglo es la siguiente:
                 <pre style="text-align:center; font-size: 18px;">tipo_de_dato[] arreglo;</pre>
-              Así se declara un arreglo, pero es necesario especificar un tamaño para poder comenzar a usarlo. Para ello se hace lo siguiente:
+                Así se declara un arreglo, pero es necesario especificar un tamaño para poder comenzar a usarlo. Para
+                ello se hace lo siguiente:
                 <pre style="text-align:center; font-size: 18px;">arreglo = new tipo_de_dato[tamaño_de_arreglo];</pre>
-              Donde tipo_de_dato puede ser: int, float, double, boolean, cualquier instancia de objeto, etc.
+                Donde tipo_de_dato puede ser: int, float, double, boolean, cualquier instancia de objeto, etc.
 
-              El indice en el que comienza a contar, como en la mayoría de los lenguajes de programación, es cero. Si se recorre el arreglo sin haber llenado sus posiciones con un valor; el valor por defecto es cero para cada posición.
-              Ejemplo:
-              <pre>
+                El indice en el que comienza a contar, como en la mayoría de los lenguajes de programación, es cero. Si
+                se recorre el arreglo sin haber llenado sus posiciones con un valor; el valor por defecto es cero para
+                cada posición.
+                Ejemplo:
+                <pre>
                 <code class="java">
   /*
    * To change this license header, choose License Headers in Project Properties.
@@ -274,24 +539,40 @@
 
             </p>
 
-              <pre> <h3>Collections (ArrayList)</h3></pre>
+            <pre> <h3>Collections (ArrayList)</h3></pre>
 
             <p>
-              Es una colección de elementos. Lo importante del termino ‘colección’ es que se caracterizan por ser dinámicos, a diferencia de los arreglos, los cuales necesitan que se especifique el tamaño sobre el que se trabajará. De igual forma, una característica importante es que los elementos que se almacenan en una colección pueden ser de cualquier tipo de dato, ya que los valores que se guardan se consideran elementos de tipo ‘object’, lo que significa que pueden ser: Integer, Float, String,Boolean, una instancia de clase, etc.
-              Para utilizarlo es necesario declararlo de la siguiente manera:
+                Es una colección de elementos. Lo importante del termino ‘colección’ es que se caracterizan por ser
+                dinámicos, a diferencia de los arreglos, los cuales necesitan que se especifique el tamaño sobre el que
+                se trabajará. De igual forma, una característica importante es que los elementos que se almacenan en una
+                colección pueden ser de cualquier tipo de dato, ya que los valores que se guardan se consideran
+                elementos de tipo ‘object’, lo que significa que pueden ser: Integer, Float, String,Boolean, una
+                instancia de clase, etc.
+                Para utilizarlo es necesario declararlo de la siguiente manera:
                 <pre style="text-align:center; font-size: 18px;">ArrayList lista = new ArrayList<>();</pre>
-              De esta manera se tiene un arreglo <strong>dinámico</strong> de objetos (pueden ser de cualquier tipo.). Sin embargo a veces se quiere especificar el tipo de dato que aceptará únicamente. Para ello se escribe de la siguiente manera:
-                <pre style="text-align:center; font-size: 18px;">ArrayList&lt;tipo_de_dato&gt; lista = new ArrayList&lt;tipo_de_dato&gt;();</pre>
-              Estas listas tiene funciones asociadas, por el momento diremos que son métodos de la lista. Dentro de estas, encontramos las siguientes:
-              <ul>
-                <li><strong>add(Object);</strong> Para añadir elementos a la lista. Se ingresan en secuencia, se le asigna un indice a cada elemento, y dentro de las listas pueden existir valores repetidos.</li>
-                <li><strong>get(int);</strong> Para obetener elementos de la lista respecto a indice. Comienza con indice 0</li>
-                <li><strong>size();</strong> Retorna el tamaño del ArrayList</li>
-                <li><strong>contains(Object);</strong> Para buscar elementos dentro de la lista. Si lo encuentra regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span style="color:#1FBED6;">false</span></li>
-                <li><strong>remove(Object);</strong> Para eliminar un elemento dentro de la lista. Si lo encuentra regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span style="color:#1FBED6;">false</span></li>
-              </ul>
+                De esta manera se tiene un arreglo <strong>dinámico</strong> de objetos (pueden ser de cualquier tipo.).
+                Sin embargo a veces se quiere especificar el tipo de dato que aceptará únicamente. Para ello se escribe
+                de la siguiente manera:
+                <pre
+                    style="text-align:center; font-size: 18px;">ArrayList&lt;tipo_de_dato&gt; lista = new ArrayList&lt;tipo_de_dato&gt;();</pre>
+                Estas listas tiene funciones asociadas, por el momento diremos que son métodos de la lista. Dentro de
+                estas, encontramos las siguientes:
+                <ul>
+                    <li><strong>add(Object);</strong> Para añadir elementos a la lista. Se ingresan en secuencia, se le
+                        asigna un indice a cada elemento, y dentro de las listas pueden existir valores repetidos.</li>
+                    <li><strong>get(int);</strong> Para obetener elementos de la lista respecto a indice. Comienza con
+                        indice 0</li>
+                    <li><strong>size();</strong> Retorna el tamaño del ArrayList</li>
+                    <li><strong>contains(Object);</strong> Para buscar elementos dentro de la lista. Si lo encuentra
+                        regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span
+                            style="color:#1FBED6;">false</span></li>
+                    <li><strong>remove(Object);</strong> Para eliminar un elemento dentro de la lista. Si lo encuentra
+                        regresa <span style="color:#1FBED6;">true</span>, de otra forma regresa <span
+                            style="color:#1FBED6;">false</span></li>
+                </ul>
 
-              Para utilizar estos métodos se debe tomar la lista que se declaro más arriba (en la que se acepta cualquier tipo de objeto) y considerar la siguiente notación:
+                Para utilizar estos métodos se debe tomar la lista que se declaro más arriba (en la que se acepta
+                cualquier tipo de objeto) y considerar la siguiente notación:
                 <pre style="text-align:center; font-size: 18px;">
                   <code class="java">
   lista.add("Este es un texto");
@@ -405,12 +686,47 @@
                 </pre>
             </p>
         </section>
-        <section id="iteratives">
+        <section id="functions">
             <h2>
-               Funciones
+                Funciones
             </h2>
+            <p>
+                Se pueden categorizar funciones el conjunto de lineas de instrucciones, encapsulados en un bloque,
+                usualmente reciben parámetros, cuyos valores se utilizan para efectuar operaciones y adicionalmente
+                retornan un valor, en caso de no retornar un valor, no se categorizan como una función. En java las
+                funciones usan el modificador <em>static</em>.
+            </p>
+            <h4>
+                Sintaxis
+            </h4>
+            <pre>
+                <code class='java'>
+                    public static [tipo_dato_a_retornar|void] [nombre_función] ([tipo_dato][parametro1],[tipo_dato][parametro2]...){
+                        //Bloque de código aquí
+                    } 
+                </code>
+            </pre>
+            <h4>
+                Ejemplo
+            </h4>
+            <pre>
+                <code class="java">
+                    public static void main(){
+                        int[] numbers = {1,2,3,4};
+                        int c = sumaEnteros(numbers); //<- se obitene el resultado en la variable c
+                    }
+                    public static int sumaEnteros(int[] a){
+                        int b = 0;
+                        for(int i=0 ; i < a.length ; i++){
+                            b = b + a[i] ;
+                        }
+                        return b;
+                    }
+                </code>
+            </pre>
+
         </section>
-        <section id="exercise">
+        <section id="exercises">
             <h2>
                 Ejercicio
             </h2>
