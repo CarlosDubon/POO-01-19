@@ -429,13 +429,25 @@
             </h2>
             <ol>
                 <li>
-                    (30%) Se necesita crear una aplicación en Java que permita llevar el control de los artículos
+                    Se necesita crear una aplicación en Java que permita llevar el control de los artículos
                     seleccionados por un cliente en una compra
                     La información se debe guardar la información en el sistema será por medio una lista de objetos
-                    Producto.
+                    Producto, además, se debe guardar la información del cliente que esta ingresando los productos.
                     <ul>
                         <li>
+                            Nombres del cliente
+                        </li>
+                        <li>
+                            Apellidos del cliente
+                        </li>
+                        <li>
+                            Número telefónico
+                        </li>                        
+                        <li>
                             Nombre de producto
+                        </li>
+                        <li>
+                            Tipo de producto
                         </li>
                         <li>
                             Precio de producto
@@ -456,10 +468,31 @@
                             Calcular total a pagar
                         </li>
                         <li>
+                            Generar factura con el siguiente formato.
+                            <pre>
+                                <code class="java">
+                                    --------------------- Factura --------------------
+                                    |           Nombre Apellido cliente              |
+                                    |                   Fecha y Hora                 |
+                                    |                                                |
+                                    |   Producto 1          p/c    cant    sub-t     |    
+                                    |   Producto 2          p/c    cant    sub-t     |    
+                                    |   Producto 3          p/c    cant    sub-t     |    
+                                    |   Producto 4          p/c    cant    sub-t     |    
+                                    |   Producto 5          p/c    cant    sub-t     |    
+                                    |   Producto 6          p/c    cant    sub-t     |    
+                                    |   Producto n          p/c    cant    sub-t     |    
+                                    |                               total:           |
+                                    |                                                |
+                                    |               numero del cliente               |
+                                    --------------------------------------------------
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
                             Salir
                         </li>
                     </ul>
-
                 </li>
             </ol>
 
