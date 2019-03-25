@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>Programación Orientada a Objetos</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#introduction">Introdución a POO</a><i class="fas fa-ellipsis-v"></i></li>
+                        <li><a href="#imp-poo">Importancia del paradigma orientado a objetos</a><i
+                                class="fas fa-retweet"></i></li>
+                        <li><a href="#class-obj">Atributos y Métodos</a><i class="fas fa-stream"></i></li>
+                        <li><a href="#class-obj">Clases y Objetos</a><i class="fas fa-stream"></i></li>
+                        <li><a href="#class-obj">Diferencia entre un objeto y una clase</a><i
+                                class="fas fa-dumbbell"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Introducción POO.</h1>
+                <h3>Lunes, 18 de Marzo de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Introdución a POO
+                            </li>
+                            <li>
+                                Importancia del paradigma orientado a objetos
+                            </li>
+                            <li>
+                                Atributos y Métodos
+                            </li>
+                            <li>
+                                Clases y Objetos
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Programación Estructurada</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id="introduction">
+            <!-- Sections Titles -->
+            <h2>
+                Introdución.
+            </h2>
+            <!-- Single paragraphs -->
+            <p>
+                La Programación Orientada a Objetos supone un cambio en la concepción del mundo de desarrollo de
+                software, introduciendo un mayor nivel de abstracción que permite mejorar las características del código
+                ﬁnal. De manera muy básica, las aportaciones de este paradigma se pueden resumir en:
+            </p>
+            <ul>
+                <li>Conceptos de clase y objeto, que proporcionan una abstracción del mundo centrada en los seres,
+                    objetos o cosas y no en los verbos.</li>
+                <li>Los datos aparecen encapsulados dentro del concepto de clase. El acceso a los datos se produce de
+                    manera controlada e independiente de la representación ﬁnal de los mismos. Como consecuencia, se
+                    facilita el mantenimiento y la evolución de los sistemas, al desaparecer las dependencias entre
+                    distintas partes del sistema./li>
+                <li>Mediante conceptos como la composición, herencia y polimorﬁsmo se consigue simpliﬁcar el desarrollo
+                    de sistemas. La composición y la herencia nos permiten construir clases a partir de otras clases,
+                    aumentando en gran medida la reutilización.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>
+                Importancia del paradigma orientado a objectos
+            </h2>
+            <p>
+                El paradigma orientado a objectos hace más fáciles las cosas al abstraer lo que se encuentra en la vida
+                real y manipularlo como lo haría naturalmente una persona. Los objetos que observamos cotidianamente
+                tienen propiedades con las cuales los identificamos: tienen un color, dimensiones, texturas (lisas,
+                ásperas, etc.), estados (frío, caliente, encendido, apagado, etc.), entre muchas otras. Y también
+                cumplen con una funcionalidad: en el caso de un carro se le incorpora un sistema de arranque, es posible
+                mover el carro con el acelerador, utilizar el limpiaparabrisas, etc.
+            </p>
+            <p>
+                Con este paradigma es posible utilizar esta forma de ver el mundo y aplicarlo a la programación. Se
+                pueden crear ‘objetos’, determinar cuales son sus propiedades utilizando los tipos de datos que ya
+                conocemos (String, int, double, boolean, etc.), las cuales a futuro nos darán información sobre el
+                objeto, también es posible modificar esas propiedades mediante funciones (métodos) que están asociadas a
+                él, entre otras características.
+            </p>
+            <p>
+                Si pensamos en una de las aplicaciones, se encuentra la facilidad de representar un personaje de un
+                videojuego. Esta instancia al momento de su creación tendrá valores por defectos que se asocian con el
+                rol y nivel que tendrá el personaje en ese momento, lo que serían sus propiedades: vida, poder asociado,
+                experiencia, etc. También será posible manipular el personaje mediante métodos asociados a él. Podrá
+                correr, atacar, saltar, subir de nivel, recibir daños, obtener vida. Cada método modificará una
+                propiedad específica, ya sea la vida, poder asociado, experiencia ganada, etc. De igual forma es posible
+                crear diferentes partidas, por cada usuario que tiene acceso al juego, por lo que se necesitan crear más
+                objetos que tendrán la misma clase en común, ‘Personaje’.
+            </p>
+            <p>
+                De esta manera es más fácil agrupar el código por archivos que representen y cumplan con un solo
+                propósito. Dentro de las ventajas de este paradigma se encuentran:
+            </p>
+            <ol>
+                <li>Los componentes se pueden reutilizar.</li>
+                <li>Facilidad de mantenimiento y modificación de los objetos existentes.</li>
+                <li>Una estructura modular clara se puede obtener, la cual no revelará el mecanismo detrás del diseño.
+                </li>
+                <li>Se proporciona un buen marco que facilita la creación de rica interfaz gráfica de usuario
+                    aplicaciones (GUI).</li>
+                <li>Se acopla bien a la utilización de bases de datos, debido a la correspondencia entre las
+                    estructuras.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>
+                Atributos y métodos
+            </h2>
+            <p>
+                Las variables como comúnmente las conocemos se tornan en atributos cuando éstos se encuentran en una
+                clase. De la misma manera, las funciones se llaman métodos de dicha clase. Los atributos y funciones se
+                declaran de la misma manera que se haría en otro lugar:
+            </p>
+            <pre>
+                <code class="java">
+                    public class Persona {
+                        String nombres;
+                        String apellidos;
+                        int edad;  
+                        double estatura;
+                       double peso;
+                     }                     
+                </code>
+            </pre>
+            <p>
+                Dichos atributos describen a cualquier persona. No importa el rol que juegue esa persona, si es un menor
+                de edad, adulto, estudiante o profesional, todos cumplen con las mismas características por lo tanto es
+                posible instanciar dicha clase y crear objetos que tendrán las mismas características.
+            </p>
+            <p>
+                <strong>Ahora con los métodos de la clase Persona:</strong>
+            </p>
+            <pre>
+                <code class="java">
+                    public class Persona {
+                        String nombres;
+                        String apellidos;
+                        int edad;  
+                        double estatura;
+                        double peso;
+                        
+                        public boolean esMayorDeEdad(){
+                          if(this.edad >= 18){
+                           return true;
+                          }
+                          else{
+                          return false;
+                         }
+                        }	    
+                      }
+                      
+                </code>
+            </pre>
+            <p>
+                Existe una función llamada constructor de la clase, la cual, al momento de instanciar un objeto, se le pasan por argumento los valores deseados para inicializarlo. En la clase se vería así:
+            </p>
+            <pre>
+                <code class="java">
+                    public class Persona {
+                        String nombres;
+                        String apellidos;
+                        int edad;  
+                        double estatura;
+                        double peso;
+                      
+                        public Persona(String nombres, String apellidos, int edad){
+                          this.nombres = nombres;
+                          this.apellidos = apellidos;
+                          this.edad = edad;
+                        }
+                        
+                        public boolean esMayorDeEdad(){
+                          if(this.edad >= 18){
+                           return true;
+                          }
+                          else{
+                          return false;
+                         }
+                        }	    
+                      }
+                      
+                </code>
+            </pre>
+            <p>
+                <strong>El constructor sigue la siguiente sintaxis: </strong>
+            </p>
+            <pre>
+                <code class="java">
+                    public <nombre_de_la_clase>(<tipo_de_dato1> nombre_parametro1, <tipo_de_dato2> nombre_parametro2){
+                        //se colocan los valores que tendrá el objeto al ser instanciado
+                        }
+                        
+                </code>
+            </pre>
+            <p>Desde la función main dónde hacemos la instancia:</p>
+            <pre>
+                <code class="java">
+                    Persona persona1 = new Persona("Rodrigo", "Corvera Diaz", 20);
+                </code>
+            </pre>
+            <p>Para poder utilizar los métodos de dicho objeto se emplea la notación del punto:</p>
+            <pre>
+                <code class="java">
+                    if(persona1.esMayorDeEdad())
+                    {
+                    System.out.println("Nos vamos pal tunco");
+                    }
+                    else
+                    {
+                    System.out.println("No, gracias, no tengo edad para salir");
+                    }
+
+                </code>
+            </pre>
+            <p>
+                De la forma en la que hemos escrito actualmente la clase, es posible acceder a los atributos directamente por medio de la notación del punto: por ejemplo:
+            </p>
+            <pre>
+                <code class="java">
+                    if(persona1.edad >= 18 )
+                    {
+                    System.out.println("Nos vamos pal tunco");
+                    }
+                    else
+                    {
+                    System.out.println("No, gracias, no tengo edad para salir");
+                    }
+
+                </code>
+            </pre>
+        </section>
+        <section id='class-obj'>
+            <h2>
+                Clases y Objetos
+            </h2>
+            <p>
+                El mundo está lleno de objetos: el automóvil, un edificio, una lavadora, un empleado, etc. El paradigma
+                de programación a objetos proporciona las abstracciones necesarias para resolver una problemática a
+                partir de la implementación de un sistema de software que conlleva a una mejor percepción del mundo
+                real.
+            </p>
+            <p>
+                Mediante la programación orientada a objetos podemos desglosar un problema en subgrupos. Estos subgrupos
+                pueden traducirse en unidades autocontenidas llamadas <b>objetos</b>, los cuales responden a
+                determinadas
+                características y operaciones. Antes de la creación de un objeto, se debe de definir en primer lugar su
+                estructura general (Plantilla) la cual recibe el nombre de <b>clase</b>. Dentro de una clase definimos
+                las
+                características generales que posee un objeto, esto se logra mediante la abstracción de datos del
+                problema considerado.
+            </p>
+            <h3>
+                Arquitectura de clase en java
+            </h3>
+            <pre>
+                <code class="java">
+                    public class Estudiante {
+    
+                        /*
+                            Atributos o propiedades de la clase.
+                            Descripción: Propiedades que caracterizan el objeto que se esta analizando.
+                        */
+                        
+                        private String carnet;
+                        private String correo;
+                        private String nombre;
+                        private String apellido; 
+                        private int edad;
+                        
+                        private Calendar fechaDeIngreso;
+                        
+                        
+                        /*
+                            Método constructor.
+                            Descripción: Se encarga de inicializar un objeto tipo Estudiante.
+                        */
+                        
+                        public Estudiante (String carnet, String correo, String nombre, String apellido, int edad, String fechaDeIngreso) {
+                                this.edad = edad;
+                                this.carnet = carnet;
+                                this.correo = correo;
+                                this.nombre = nombre;
+                                this.apellido = apellido;
+                                
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                                
+                                Date ingreso = dateFormat.parse(fechaDeIngreso);
+                                this.fechaDeIngreso = Calendar.getInstance();
+                                this.fechaDeIngreso.setTime(ingreso);
+                        }
+                    
+                        /* Setters & Getters */
+                        
+                        public String getCarnet() {
+                            return carnet;
+                        }
+                    
+                        public void setCarnet(String carnet) {
+                            this.carnet = carnet;
+                        }
+                    
+                        public String getCorreo() {
+                            return correo;
+                        }
+                    
+                        public void setCorreo(String correo) {
+                            this.correo = correo;
+                        }
+                    
+                        public String getNombre() {
+                            return nombre;
+                        }
+                    
+                        public void setNombre(String nombre) {
+                            this.nombre = nombre;
+                        }
+                    
+                        public String getApellido() {
+                            return apellido;
+                        }
+                    
+                        public void setApellido(String apellido) {
+                            this.apellido = apellido;
+                        }
+                    
+                        public int getEdad() {
+                            return edad;
+                        }
+                    
+                        public void setEdad(int edad) {
+                            this.edad = edad;
+                        }
+                    
+                        public Calendar getFechaDeIngreso() {
+                            return fechaDeIngreso;
+                        }
+                    
+                        public void setFechaDeIngreso(Calendar fechaDeIngreso) {
+                            this.fechaDeIngreso = fechaDeIngreso;
+                        }
+                        
+                        /* Métodos de la clase (Acciones) */
+                        
+                        public void presentarme () {
+                            JOptionPane.showMessageDialog(null, "Hola, mi nombre es: " + this.getNombre() + this.getApellido(), "Saludo", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        
+                        public void saludar (String nombre) {
+                            JOptionPane.showMessageDialog(null, "Hola " + nombre + ", ¿Cómo te va?", "Saludo", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    }                    
+                </code>
+            </pre>
+            <h3>
+                Instancia de un objeto
+            </h3>
+            <pre>
+                <code class='java'>
+                    public class LABO02Clases {
+                        public static void main(String[] args) {
+                            //Creación de objeto mediante la instancia de una clase.
+                           Estudiante juarez = new Estudiante("00151516", "00151516@uca.edu.sv", "Alejandro", "Juárez", 21, "06/03/2016");
+                           
+                           juarez.presentarme();
+                           juarez.saludar(JOptionPane.showInputDialog("¿Cuál es tu nombre?"));
+                        }
+                    }
+                    
+                </code>
+            </pre>
+        </section>
+
+        <section id="exercises">
+            <h2>
+                Ejercicio
+            </h2>
+            <ol>
+                <li>
+                    (30%) Se necesita crear una aplicación en Java que permita llevar el control de los artículos
+                    seleccionados por un cliente en una compra
+                    La información se debe guardar la información en el sistema será por medio una lista de objetos
+                    Producto.
+                    <ul>
+                        <li>
+                            Nombre de producto
+                        </li>
+                        <li>
+                            Precio de producto
+                        </li>
+                        <li>
+                            Cantidad de producto
+                        </li>
+                    </ul>
+                    La aplicación debe desplegar un menú con las siguientes opciones:
+                    <ul>
+                        <li>
+                            Ingreso de productos
+                        </li>
+                        <li>
+                            Listar productos ingresados en la compra
+                        </li>
+                        <li>
+                            Calcular total a pagar
+                        </li>
+                        <li>
+                            Salir
+                        </li>
+                    </ul>
+
+                </li>
+            </ol>
+
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
