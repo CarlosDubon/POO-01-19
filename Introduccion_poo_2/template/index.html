@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>POO</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#conditions">Sobrecarga de métodos</a><i class="fas fa-weight-hanging"></i></li>
+                        <li><a href="#bucles">Métodos estáticos</a><i class="fas fa-bolt"></i></li>
+                        <li><a href="#lists">Variables estaticas</a><i class="fas fa-bolt"></i></li>
+                        <li><a href="#functions">Cohesión y acoplamiento</a><i class="fas fa-puzzle-piece"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Diseño de clases</h1>
+                <h3>Lunes, 1 abril de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Sobrecarga de métodos
+                            </li>
+                            <li>
+                                Métodos estáticos
+                            </li>
+                            <li>
+                                Variables estaticas
+                            </li>
+                            <li>
+                                Cohesion y acoplamiento
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Diseño de clases</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id='conditions'>
+            <h2>
+                Sobrecarga de métodos
+            </h2>
+            <p>
+                La sobrecarga de métodos en Java/C# hace referencia cuando nosotros creamos dos o más métodos dentro de
+                la
+                misma clase, y estos tienen la característica que pueden compartir el mismo nombre, siempre que el orden
+                de los parámetros que pasamos al método sean distintos.
+            </p>
+            <p>Algunas de las reglas que debemos tomar en cuenta para la sobrecarga de método son:</p>
+            <ul>
+                <li>El tipo y/o el número de parámetros de cada método sobrecargado debe ser distinto.</li>
+                <li>No es suficiente que dos métodos sean diferentes solo por el tipo de dato que retornan.</li>
+                <li>Los valores de retorno de los métodos sobrecargados pueden ser diferentes.</li>
+            </ul>
+            <p>Estas reglas también aplican cuando estamos creando constructores en una clase.</p>
+            <p>
+                Por ejemplo para una clase persona, definimos diferentes constructores dependiendo, si queremos
+                instanciar un objeto persona con ciertos parámetros.
+            </p>
+            <pre>
+                <code class="java">
+                    public Persona(String nombres, String apellidos) {
+                        this.nombres = nombres;
+                        this.apellidos = apellidos;
+                    }
+                </code>
+            </pre>
+            <p>En este ejemplo se instancia el objeto persona con los nombres y apellidos.</p>
+            <pre>
+                <code class="java">
+                    public Persona(String nombres, String apellidos, int edad) {
+                        this.nombres = nombres;
+                        this.apellidos = apellidos;
+                        this.edad = edad;
+                    }                
+                </code>
+            </pre>
+            <p>Podemos identificar que al constructor lo llamamos de la misma manera Persona, sin embargo la cantidad de
+                parámetros que este contiene son 3, nombres, apellidos y edad.</p>
+            <pre>
+                <code class="java">
+                    public Persona(String nombres, String apellidos, double estatura) {
+                        this.nombres = nombres;
+                        this.apellidos = apellidos;
+                        this.estatura = estatura;
+                    }                
+                </code>
+            </pre>
+            <p>
+                Por último el constructor al igual que el anterior tiene 3 parámetros, sin embargo el tercer parámetro
+                ahora es de tipo double y no int como en el ejemplo anterior.
+            </p>
+            <p>
+                Otro ejemplo sin usar constructores. Tenemos 3 metodos llamados sumaNumeros en el cual los 3, tiene 2
+                parametos, sin embargo son de diferente tipo en cada método, por lo cual cumple las reglas descritas
+                anteriormente.
+            </p>
+            <pre>
+                <code class="java">
+                    public void sumaNumeros(int x, int y){
+                        int suma= x+y;
+                        System.out.println("la suma es:" + suma);
+                    }                        
+                </code>
+            </pre>
+            <p>
+                Para el primero tomamos 2 números de tipo int los sumamos e imprimimos la suma, sin embargo la función
+                es de tipo void, por lo cual no retornamos nada.
+            </p>
+            <pre>
+                <code class="java">
+                    public double sumaNumeros (double x, double y){
+                        double  suma = x+ y;
+                        System.out.println("La suma es: ” + suma );
+                        return suma;
+                    }                        
+                </code>
+            </pre>
+            <p>
+                Para el segundo ejemplo se pasan como parámetro 2 números de tipo double, los sumamos, pero a diferencia
+                del primer ejemplo, mostramos en pantalla la suma, sin embargo nuestro método debe retornar un valor de
+                tipo double por lo que retornamos el valor de la suma.
+            </p>
+            <pre>
+                <code class="java">
+                    public void sumaNumeros (String x, String y){
+                        int suma= Integer.parseInt(x) + Integer.parseInt(y);
+                        System.out.println("la suma es:” + suma);
+                    }                        
+                </code>
+            </pre>
+            <p>
+                Por ultimo se pasa como parametro 2 valores de tipo String, sin embargo para poder operarlos debemos
+                auxiliarnos de la clase Integer, y para ello utilizamos el método parseInt(String), que me recibe como
+                parametro un Strin para convertirlo en int, y luego podemos imprimir la suma.
+            </p>
+        </section>
+        <section id="cohesion">
+            <h2>
+                Métodos y variables estáticos
+            </h2>
+            <article>
+                <h3>
+                    ¿Qué es la propiedad <em>static</em> en Java o en C#?
+                </h3>
+                <p>
+                    Ambos lenguajes de programación manejan el mismo concepto. Una clase, método o campo declarado como
+                    estático puede ser accedido o invocado sin la necesidad de tener que instanciar un objeto de la
+                    clase. Uno de los ejemplos típicos de uso de métodos y variables estáticas es la clase
+                    <code>java.lang.Math</code>
+                </p>
+                <pre>
+                    <code class="java">
+                        public class MathTest {
+ 
+                            public static void main(String[] args) {
+                                double floorOfPi = Math.floor(Math.PI);
+                                System.out.println(floorOfPi);
+                            }
+                        }                        
+                    </code>
+                </pre>
+                <small>El resultado del código anterior es: 3.</small>
+            </article>
+            <article>
+                <h3>
+                    Campos estáticos
+                </h3>
+                <p>
+                    Los campos de una clase declarados como estáticos son inicializados en el momento en que se carga la
+                    clase en memoria, respetando el orden de declaración. Los campos estáticos no pueden ser accedidos
+                    desde un contexto no estático; este comportamiento resultará en un error en tiempo de ejecución.
+                </p>
+                <p>
+                    Gracias a que las variables estáticas son compartidas entre todos los objetos de una clase, es
+                    posible implementar el patrón Singleton, guardando una referencia de la instancia:
+                </p>
+                <pre>
+                    <code class="java">
+                        public class SingletonTest {
+                            private static SingletonTest instance = null
+                             public static SingletonTest getInstance() {
+                                if (instance == null) {
+                                    instance = new SingletonTest()
+                                }
+                                 return instance
+                            }
+                        }                        
+                    </code>
+                </pre>
+            </article>
+            <article>
+                <h3>
+                    Métodos estáticos
+                </h3>
+                <p>
+                    Debido a que los métodos estáticos son enlazados en tiempo de compilación mediante static binding
+                    usando la información del tipo, no es posible realizar sobreescritura (override) de métodos.
+                </p>
+                <pre>
+                    <code class="java">
+                        class Padre {
+
+                            public static void metodoEstatico() {
+                                System.out.println("Invocación desde el padre.");
+                            }
+                        }
+                        
+                        class Main{
+                            public static void main(){
+                                Padre.metodoEstatico();
+                            }
+                        }
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section id="cohesion">
+            <h2>Cohesión y acoplamiento</h2>
+            <article>
+                <h3>
+                    Cohesión
+                </h3>
+                <p>
+                    Podríamos definir la cohesión como lo estrecha que es la relación entre los componentes de algo. Si
+                    hablamos de clases, una clase tendrá una cohesión alta si sus métodos están relacionados entre sí,
+                    tienen una “temática” común, trabajan con tipos similares, etc. Si pasamos a componentes de mayor
+                    tamaño, como paquetes o librerías, tendríamos una cohesión alta cuando las clases que lo forman
+                    están muy relacionadas entre sí, con un objetivo claro y focalizado.
+                </p>
+                <small>Información rescatada de: http://blog.koalite.com/2015/02/cohesion-y-acoplamiento/</small>
+            </article>
+            <article>
+                <h3>
+                    Acoplamiento
+                </h3>
+                <p>
+                    El acoplamiento es la manera que se relacionan varios componentes entre ellos. Si existen muchas
+                    relaciones entre los componentes, con muchas dependencias entre ellos, tendremos un grado de
+                    acoplamiento alto. Si los componentes son independientes unos de otros, el acoplamiento será bajo.
+                </p>
+                <small>Información rescatada de: http://blog.koalite.com/2015/02/cohesion-y-acoplamiento/</small>
+            </article>
+            <p>Lo que se busca principalmente es tener <b>alta cohesión en clases y un bajo acoplaminto.</b> </p>
+        </section>
+        <section>
+            <h2>
+                Ejercicio
+            </h2>
+            <p>
+                Un Cine desea implementar un módulo sistema para la administración de sus funciones los fines de semana.
+                Al cine le interesa guardar el nombre del cine y el lema. (Cinepolis, la capital del cine), se sabe que
+                el cine únicamente realiza 3 funciones diarias los fines de semana, se necesita además guardar de cada
+                función la sala, el nombre de la función, y el precio.
+            </p>
+            <p>Realizar una solución computacional en java que contenga un menú cíclico con las siguientes características: </p>
+            <ol>
+                <li>Para la creación del cine crear un constructor sobrecargado, uno que me permita guardar el nombre del cine únicamente, y otro que me permita guardar el nombre del cine y el lema. </li>
+                <li>Ver información del cine </li>
+                <li>Editar información del cine, crear 2 metodos sobrecargados, uno que me permita editar y guardar el nombre únicamente, y otro que me permita guardar y editar el nombre y lema. </li>
+                <li>Agregar una nueva función: el usuario india el día (sábado o domingo) y el número de la función (1,2,3) y se procede a editar los datos que correspondan. (TOMAR EN CUENTA: se debe validar que ya exista una función en el día y turno seleccionado, caso contrario indicar al usuario que no es posible agregar una función el día y turno seleccionado) </li>
+                <li>Editar una función: el usuario indica el día (sábado o domingo), y el número de la función (1,2, 3), y se procede a modificar los datos correspondientes a la función, (TOMAR EN CUENTA: se debe validar que ya exista una función en el día y turno seleccionado, caso contrario indicar al usuario que no es posible editar). </li>
+                <li>Imprimir la cartelera de ambos días (TOMAR EN CONSIDERACION: utilizar una función estática para imprimir el menú). 
+                        </li>
+            </ol>
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
