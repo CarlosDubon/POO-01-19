@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>POO</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#conditions">Interfaces</a><i class="fas fa-weight-hanging"></i></li>
+                        <li><a href="#bucles">Herencia</a><i class="fas fa-bolt"></i></li>
+                        <li><a href="#functions">Ejercicio</a><i class="fas fa-puzzle-piece"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Herencia e Interaces</h1>
+                <h3>Lunes, 1 abril de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Interfaces
+                            </li>
+                            <li>
+                                Herencia
+                            </li>
+                            <li>
+                                Ejercicio
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Herencia e Interaces</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id="interface">
+            <h2>Interfaces</h2>
+            <p>
+                Una <em>interfaz</em> es una especie de plantilla para la construcción de clases. Normalmente una
+                interfaz se
+                compone de un conjunto de declaraciones de <b>cabeceras</b> de <b>métodos</b> que especifican un
+                protocolo de comportamiento para una o varias clases
+            </p>
+            <p>
+                Además, una interfaz puede emplearse también para declarar constantes que luego puedan ser utilizadas
+                por otras clases.
+            </p>
+            <p>
+                Las interfaces cumplen con las siguientes propiedades:
+            </p>
+            <ul>
+                <li><b>Todos</b> los métodos de una interfaz se declaran implícitamente como abstractos y públicos, por
+                    tanto, no puede implementar ningún método.</li>
+                <li>Una interfaz no declara variables de instancia.</li>
+            </ul>
+            <h3>Declaración de una interfaz</h3>
+            <pre>
+                <code class='java'>
+                    public interface IndentificadorInterfaz{
+                        //Lista de constantes y métodos.
+                    }
+                </code>
+            </pre>
+            <h3>Implementación de interfaz</h3>
+            <pre>
+                <code class="java">
+                    public class IdentificadorClase implements IndentificadorInterfaz{
+                        //Resto de clase
+                    }
+                </code>
+            </pre>
+            <h3>Ejemplo de interfaces.</h3>
+            <p>ShapesCalc.java</p>
+            <pre>
+                <code class="java">
+                    public interface ShapesCalc{
+                        float calcArea();
+                        float calcVolume();
+                    }
+                </code>
+            </pre>
+            <p>sphere.java</p>
+            <pre>
+                <code class='java'>
+                    public class Shepere implements ShapesCalc{
+                        public float calcArea(){
+                            //proceso con formula
+                        }
+                        public float calcVolume(){
+                            //proceso con formula
+                        }
+                    }
+                </code>
+            </pre>
+        </section>
+        <section id='herecia'>
+            <h2>Herencia</h2>
+            <p>
+                La Herencia es uno de los 4 pilares de la programación orientada a objetos (POO) junto con la
+                Abstracción, Encapsulación y Polimorfismo.
+            </p>
+            <p>
+                Respecto a la herencia se han dado muchas definiciones como por ejemplo la siguiente: <em>"La herencia
+                    es un
+                    mecanismo que permite la definición de una clase a partir de la definición de otra ya existente. La
+                    herencia permite compartir automáticamente métodos y datos entre clases, subclases y objetos."</em>.
+            </p>
+            <h2>Ejemplo</h2>
+            <small>fuente: <a
+                    href="https://jarroba.com/herencia-en-la-programacion-orientada-a-objetos-ejemplo-en-java/">https://jarroba.com/herencia-en-la-programacion-orientada-a-objetos-ejemplo-en-java/</a></small>
+            <p>
+                Vamos a simular el comportamiento que tendrían los diferentes integrantes de la selección española de
+                futbol; tanto los Futbolistas como el cuerpo técnico (Entrenadores, Masajistas, etc…). Para simular este
+                comportamiento vamos a definir tres clases que van a representaran a objetos Futbolista, Entrenador y
+                Masajista. De cada unos de ellos vamos a necesitar algunos datos que reflejaremos en los atributos y una
+                serie de acciones que reflejaremos en sus métodos. Estos atributos y métodos los mostramos en el
+                siguiente diagrama de clases:
+            </p>
+            <img src="../assets/images/template/example.jpg" alt="">
+            <p>
+                Como se puede observar, vemos que en las tres clases tenemos atributos y métodos que son iguales ya que
+                los tres tienen los atributos id, Nombre, Apellidos y Edad; y los tres tienen los métodos de Viajar y
+                Concentrarse:
+            </p>
+            <img src="../assets/images/template/example2.png" alt="">
+            <p>Con lo cual aquí se puede extraer un "factor común" de las clases y crear una clase padre que se identifique como IntegranteSeleccion en cual contenga los atributos y métodos que se tienen en común</p>
+            <h2>Herencia de clases</h2>
+            <pre>
+                <code class="java">
+                    plublic class IdentificadorClase extends IdetificadorClasePadre{
+                        //Contenido clase
+                    }
+                </code>
+            </pre>
+            <p>
+                NOTAL: La clase hija que hereda una clase padre, contiene todos los atributos y métodos que su clase padre, y la clase hija puede tener sus propios métodos
+            </p>
+        </section>
+        <section class="ejercicios">
+            <p>Simular un zoológico en el cual se pueda realizar un ingreso y visualización de animales ,el programa debe contener lo siguiente: </p>
+            <ul>
+                <li>Crear una clase llamada Animal (10%)</li>
+                    <ul>
+                        <li>Definir <b>cuatro</b> atributos que tienen en común todos los animales de un zoológico (5%)</li>
+                        <li>Definir como minimo <b>dos</b> métodos e implemetar, que tienen en común todos los animales y lo realizan de la misma manera (10%)</li>
+                    </ul>
+                <li>Crear una interfaz la cual contanga <b>dos</b> métodos en común (minimo), tentiendo en cuenta que el desarrollo cambia dependiendo del animal (10%)</li>
+                <li>Crear como minimo <b>tres</b> clases que implementen la interfaz y la superclase anteriormente creada (<em>estas clases que se definirán aquí, determinarán la variedad de sus animales</em>) (10%), Cada clase debe contener los siguinetes puntos:</li>
+                    <ul>
+                        <li>Definir un atributo propio de la clase como minimo (5%)</li>
+                        <li>Definir e implementar un método propio de la clase (10%)</li>
+                        <li>Implementar los métodos de manera correcta de la interfaz. (10%)</li>
+                    </ul>
+                <li>La clase principal debe contener lo siguiente:</li>
+                    <ul>
+                        <li>Al iniciar el programa el zoológico debe estar construido, es decir, previamente en el código se debe hacer la creación de los objetos con sus atributos (15%)</li>
+                        <li>Mostrar una lista con los animales que se pueden visitar (5%), al seleccionar:</li>
+                            <ul>
+                                <li>Pedir al usuario, que acción desearia que el animal realice en ese momento y ejecutarla (5%)</li>
+                            </ul>
+                        <li>El programa debe repetirse hasta que el usuario decida abandonar el zoológico (5%)</li>
+                    </ul>
+            </ul>
+            <small>TIP: Las clases que representan a los animales pueden ser: Perro, Gato,Tigre,Nutria,etc | Los métodos de los animales pueden contener solamente mensajes alusivos a sus acciones.</small>
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
