@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>POO</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#conditions">Excepciones</a><i class="fas fa-weight-hanging"></i></li>
+                        <li><a href="#functions">Ejercicio</a><i class="fas fa-puzzle-piece"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Excepciones</h1>
+                <h3>Lunes, 13 mayo de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Excepciones
+                            </li>
+                            <li>
+                                Ejercicio
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Excepciones</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id="interface">
+            <h2>Introducción</h2>
+            <p>
+                En Java los errores en tiempo de ejecución (cuando se esta ejecutando el programa) se denominan
+                excepciones, y esto ocurre cuando se produce un error en alguna de las instrucciones de nuestro
+                programa, como por ejemplo cuando se hace una división entre cero, cuando un objeto es 'null' y no puede
+                serlo, cuando no se abre correctamente un fichero, etc. Cuando se produce una excepción se muestra en la
+                pantalla un mensaje de error y finaliza la ejecución del programa.
+            </p>
+            <p>
+                Cuando en Java se produce una excepción se crear un objeto de una determina clase (dependiendo del tipo
+                de error que se haya producido), que mantendrá la información sobre el error producido y nos
+                proporcionará los métodos necesarios para obtener dicha información. Estas clases tienen como clase
+                padre la clase Throwable, por tanto se mantiene una jerarquía en las excepciones. A continuación
+                mostramos algunas de las clases para que nos hagamos una idea de la jerarquía que siguen las
+                excepciones, pero existen muchísimas más excepciones que las que mostramos:
+            </p>
+            <img src="../assets/images/template/diagrama.png" alt="">
+
+            <h3>Sintaxis:</h3>
+            <pre>
+                <code class="java">
+                    try {
+
+                        // Instrucciones cuando no hay una excepción
+                    
+                    } catch (TypeException ex) {
+                    
+                        // Instrucciones cuando se produce una excepcion
+                    
+                    } finally {
+                    
+                        // Instruciones que se ejecutan, tanto si hay como sino hay excepciones
+                    
+                    }
+                </code>
+            </pre>
+            <p>
+                Respecto a la estructura "try – catch – finally", se ha de decir que primero se ejecuta el bloque "try",
+                si se produce una excepción se ejecuta el bloque "catch" y por último el bloque "finally". En esta
+                estructura se puede omitir el bloque "catch" o el bloque "finally", pero no ambos.
+            </p>
+            <h3>Ejemplos:</h3>
+            <pre>
+                <code class="java">
+                    public class MyClass {
+                        public static void main(String[] args) {
+                          Scanner sc = new Scanner(System.in);
+                          int n;
+                          do{
+                               try{
+                                     System.out.print("Introduce un número entero > 0: ");
+                                     n = sc.nextInt();
+                                     System.out.println("Número introducido: " + n);
+                              }catch(InputMismatchException e){
+                                           sc.nextLine();
+                                           n = 0;
+                                           System.out.println("Debe introducir un número entero " + e.toString());
+                              }
+                          }while(n<=0);
+                        }
+                    }                    
+                </code>
+            </pre>
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
