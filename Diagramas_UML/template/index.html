@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../assets/images/icons/netbeans.png">
+
+    <title>POO</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación orientada a objetos.<br>
+        Ciclo 01/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../assets/images/template/cover.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#conditions">Excepciones</a><i class="fas fa-weight-hanging"></i></li>
+                        <li><a href="#functions">Ejercicio</a><i class="fas fa-puzzle-piece"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Diagrama de clases UML</h1>
+                <h3>Lunes, 13 mayo de 2019.</h3>
+                <div class="grid-div two-columns frontList">
+                    <!-- Two-columns item -->
+                    <div class="article-body">
+                        <h4>Temario:</h4>
+                        <ul>
+                            <li>
+                                Introducción
+                            </li>
+                            <li>
+                                Ejercicio
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-body">
+
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Excepciones</h1>
+            </div>
+        </header>
+
+        <!-- Sections method -->
+        <section id="interface">
+            <h2>Introducción</h2>
+            <p>
+                Un diagrama de clases UML tiene como propósito modelar la estructura que una aplicación tiene a nivel de
+                clases, considerando una descripción de ellas. Dentro de las propiedades que se analizan se encuentran
+                las siguientes:
+            </p>
+            <ul>
+                <li>La relación existente entre clases (herencia o bidireccional).</li>
+                <li>Descripción de los atributos.</li>
+                <li>Descripción de los métodos.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Descripción de los atributos</h2>
+            <p>
+                Como se sabe las clases poseen atributos que la describen, pero sería muy tedioso analizarlos uno por
+                uno para saber su tipo de dato, su modificador de acceso y su nombre.
+            </p>
+            <p>Si consideramos la siguiente clase:</p>
+            <pre>
+                <code class="java">
+                    public class Persona{
+                        private String nombre;
+                        private String apellido;
+                        private String fechaNacimiento;
+                        private String pais;
+                </code>
+            </pre>
+            <p>
+                La única forma de conocer la descripción de cada atributo es abriendo dicha clase, sin embargo, es
+                posible utilizar un diagrama de clases UML que la describen de forma general. De igual la clase Persona
+                tendrá métodos, y es probable que esta sea una super clase (que implica que otras clases heredan de
+                ella). Es posible que que una clase también se relacione con otra porque uno de sus atributos será una
+                instancia de dicha clase. Cada uno de estos casos se pueden describir mediante un diagrama, primero se
+                considera el análisis de una clase:
+            </p>
+            <figure>
+                <img src="../assets/images/main/UML.PNG" />
+            </figure>
+            <p>
+                El diagrama de una clase de divide en tres secciones como se puede observar, en la casilla superior se
+                encuentra el nombre de la clase, en la segunda están los atributos y por último tenemos los métodos.
+            </p>
+            <p>
+                Esta es una vista general de la estructura que tiene una clase en un diagrama como este, ahora veamos
+                cómo se vería la clase Persona empleando el diagrama de clases UML.
+            </p>
+            <figure>
+                <img src="../assets/images/main/UML1.png">
+            </figure>
+            <p>
+                Consideremos que cada atributo primero tiene un símbolo al lado izquierdo de su nombre, dicho símbolo
+                indica el modificador de acceso de dicha propiedad.
+            </p>
+        </section>
+        <section>
+            <h2>Modificadores de acceso a miembros</h2>
+            <p>
+                Todas las clases poseen diferentes niveles de acceso en función del modificador de acceso (visibilidad).
+                Se mostrarán los que más se ocupan:
+            </p>
+            <ul>
+                <li>Público (+)</li>
+                <li>Privado (-)</li>
+                <li>Protegido (#)</li>
+            </ul>
+            <p>
+                Podemos concluir que todos los atributos en la clase son privados para este caso. De igual forma esto se
+                aplica para los métodos de la clase. Si observamos a la derecha de los atributos podemos ver el tipo de
+                dato que posee. Cabe destacar que debe ser lo más general posible, como el caso de los String, que en
+                realidad se escribe como str para denotar que es una cadena de texto con el propósito de no hacer una
+                descripción basada en un lenguaje en particular.
+            </p>
+        </section>
+        <section>
+            <h3>
+                También se puede representar el concepto de herencia de la siguiente manera:
+            </h3>
+            <figure>
+                <img src="../assets/images/main/UML2.png" alt="">
+            </figure>
+            <p>
+                La herencia se presenta con una fecha que sale en la parte superior de un elemento y la cual apunta a la
+                clase padre. La flecha no debe tener color de fondo. De esta forma la clase Estudiante hereda las
+                propiedades y los métodos de la clase Persona; no es necesario copiar dichas cualidades en la tabla
+                Estudiante, ya que la flecha indica esta relación
+            </p>
+            <p>
+                También existe el concepto asociación entre las clases, que nos dice qué tanta correlación existe entre
+                las clases.
+            </p>
+            <h3>
+                Asociación bidireccional:
+            </h3>
+            <p>
+                La relación predeterminada entre dos clases. Ambas clases están conscientes una de la otra y de la
+                relación que tienen entre sí. Esta asociación se representa mediante una línea recta entre dos clases.
+            </p>
+            <figure>
+                <img src="../assets/images/main/UML3.png" alt="">
+            </figure>
+            <p>
+                En resumen, son clases que se relacionan entre sí porque dentro de su naturaleza es necesario considerar
+                cuantos elementos (o instancias) tendrán de la otra.
+                En este caso del lado del carro “assignedCar” nos indica una relación 0.1 lo que significa que puede
+                existir uno o ningún carro existente para un viaje, pero si consideramos el lado de la clase Viaje
+                (getRoadTrip), tiene una relación 0.* que nos indica que es posible que no exista un carro asociado a
+                dicho viaje pero también nos dice que pueden existir “n” número de instancias de carro en ella (porque
+                es un viaje en caravana).
+            </p>
+        </section>
+    </article>
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/javaScript.js"></script>
+<script src="../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
